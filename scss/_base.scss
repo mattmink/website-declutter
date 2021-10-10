@@ -1,5 +1,5 @@
 body {
-    background-image: url(../assets/images/bg.jpg);
+    background-image: url(/images/bg.jpg);
     background-size: cover;
     background-position: right bottom;
     background-repeat: no-repeat;
@@ -7,7 +7,7 @@ body {
     background-attachment: fixed;
 
     @include media2x {
-        background-image: url(../assets/images/bg@2x.jpg);
+        background-image: url(/images/bg@2x.jpg);
     }
 }
 
