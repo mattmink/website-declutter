@@ -13,9 +13,11 @@ const handler = async (event) => {
     try {
         const { token } = event.queryStringParameters;
 
+        console.log({ token, secret });
+
         const { data } = await axios.post(verifyUrl, encode({ secret, response: token }), { headers: { 'content-type': 'application/x-www-form-urlencoded' } });
 
-        console.log(data);
+        console.log({ data });
 
         if (!data || !data.success || data.score < .5) throw Error();
 
@@ -24,7 +26,7 @@ const handler = async (event) => {
             body: JSON.stringify({ message: 'You are not a robot' }),
         };
     } catch (error) {
-        return { statusCode: 500, body: 'You are a robot' };
+        return { statusCode: 403, body: 'You are a robot' };
     }
 }
 
