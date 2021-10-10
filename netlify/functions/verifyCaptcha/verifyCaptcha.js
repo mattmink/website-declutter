@@ -5,15 +5,19 @@ const axios = require('axios');
 const secret = process.env.GOOGLE_RECAPTCHA_SECRET;
 const verifyUrl = 'https://www.google.com/recaptcha/api/siteverify';
 
-const encode = obj => Object.keys(obj)
-    .map((key) => `${key}=${encodeURIComponent(obj[key])}`)
+const encode = obj => Object.entries(obj)
+    .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
     .join('&');
 
 const handler = async (event) => {
     try {
         const { token } = event.queryStringParameters;
 
-        await axios.post(verifyUrl, encode({ secret, response: token }), { headers: { 'content-type': 'application/x-www-form-urlencoded' } });
+        const { data } = await axios.post(verifyUrl, encode({ secret, response: token }), { headers: { 'content-type': 'application/x-www-form-urlencoded' } });
+
+        console.log(data);
+
+        if (!data || !data.success || data.score < .5) throw Error();
 
         return {
             statusCode: 200,
