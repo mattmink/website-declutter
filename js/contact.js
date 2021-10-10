@@ -1,18 +1,13 @@
 import { $, $$ } from './utils';
+import createCaptcha from './captcha';
 
 const form = $('#contactForm');
 const button = form.querySelector('button').parentElement;
 const alert = document.createElement('div');
-const phoneForm = $('#phoneForm');
 const phone = $('#phone');
 const phoneParts = $$('#phone span');
-const spamTest = $('#spamTest');
 
-phoneForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    if (spamTest.value.trim().toLowerCase() !== 'mink') return;
-
+function showPhone() {
     String.fromCharCode(...'53514951495752534955'.match(/\d{1,2}/g).reverse())
         .match(/(\d{3})(\d{3})(\d{4})/)
         .slice(1)
@@ -20,8 +15,7 @@ phoneForm.addEventListener('submit', (e) => {
             phoneParts[i].innerText = part;
         });
     phone.classList.remove('obfuscate');
-    phoneForm.remove();
-});
+}
 
 const showAlert = (type, message) => {
     alert.className = `alert alert-${type}`;
@@ -49,3 +43,5 @@ form.addEventListener('submit', (e) => {
             showAlert('error', 'Something seems to have gone wrong while sending the message. Please try again, or give me a call instead.')
         });
 });
+
+createCaptcha($('#phoneCaptcha'), showPhone);
