@@ -1,0 +1,44 @@
+body {
+    background-image: url(../assets/images/bg.jpg);
+    background-size: cover;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-attachment: fixed;
+
+    @include media2x {
+        background-image: url(../assets/images/bg@2x.jpg);
+    }
+}
+
+
+.container {
+    max-width: 1240px;
+    padding: 0 2rem;
+    margin: 0 auto;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.nav-item:not(:first-child) {
+    margin-left: 1.5rem;
+}
+
+.nav-link {
+    color: #707070;
+    text-decoration: none;
+    font-size: 0.8rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

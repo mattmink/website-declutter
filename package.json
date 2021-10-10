@@ -1,0 +1,13 @@
+{
+    "name": "website-declutter",
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "vite src",
+        "build": "vite build src",
+        "serve": "vite preview src"
+    },
+    "devDependencies": {
+        "sass": "^1.42.1",
+        "vite": "^2.6.4"
+    }
+}

@@ -1,0 +1,31 @@
+.btn {
+    display: inline-block;
+    font-family: $font-family-headings;
+    font-weight: 400;
+    font-size: .9em;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    background-color: $brand-1;
+    color: #fff;
+    border: 1px solid transparent;
+    box-shadow: 0 -2px 2px rgba(0 0 0 / 0.1) inset, 0 2px 2px rgba(255 255 255 / 0.1) inset;
+    cursor: pointer;
+    transition: background-color ease-out 0.15s, box-shadow ease-out 0.15s;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: $link-color-hover;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 -2px 0 rgba(0 0 0 / 0.1) inset, 0 2px 0 rgba(255 255 255 / 0.1) inset, $active-control-shadow;
+    }
+
+    &:active {
+        box-shadow: 0 2px 0 rgba(0 0 0 / 0.1) inset, 0 -2px 0 rgba(255 255 255 / 0.1) inset, $active-control-shadow;
+        background-color: darken($brand-1, 10);
+    }
+}

@@ -1,0 +1,43 @@
+.contact {
+    background-color: white;
+    padding: 4rem 0;
+}
+
+.contact-grid > form {
+    margin-bottom: 3rem;
+}
+
+.phone-number {
+    font-family: $font-family-headings;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.phone-number.obfuscate span {
+    border-radius: 4px;
+    height: 0.25em;
+    vertical-align: middle;
+    display: inline-block;
+    background-color: $brand-1;
+    opacity: .75;
+}
+
+.phone-number.obfuscate .phone-area {
+    width: 1.65em;
+}
+
+.phone-number.obfuscate .phone-exchange {
+    width: 1.7em;
+}
+
+.phone-number.obfuscate .phone-line {
+    width: 2.2em;
+}
+
+@include media-breakpoint-up(md) {
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}

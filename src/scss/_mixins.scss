@@ -1,0 +1,64 @@
+@mixin background-svg($url, $fill, $stroke, $fill-opacity: 1) {
+    $fill-color: str-slice(inspect($fill), 2);
+    $stroke-color: str-slice(inspect($stroke), 2);
+    background-image: unquote('url("' + $url + '?fill=%23' + $fill-color + '&stroke=%23' + $stroke-color + '&fill-opacity=' + $fill-opacity + '")');
+}
+
+@mixin control-transition() {
+    transition: color .15s ease-in-out,
+        background-color .15s ease-in-out,
+        border-color .15s ease-in-out,
+        box-shadow .15s ease-in-out;
+}
+
+@mixin media-breakpoint-up($name) {
+    $min: map-get($breakpoints, $name);
+    @if $min != 0 {
+        @media (min-width: $min) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-down($name) {
+    $max: map-get($breakpoints, $name);
+    @if $max != map-get($breakpoints, xxl) {
+        @media (max-width: $max - 1) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-between($min: xs, $max: xxl) {
+    @include media-breakpoint-up($min) {
+        @include media-breakpoint-down($max) {
+            @content;
+        }
+    }
+}
+
+@mixin flex-font-size($font-size, $breakpoint: lg) {
+    $n: strip-unit($font-size);
+    font-size: $n * 3.5vw;
+    @include media-breakpoint-up($breakpoint) {
+        font-size: $font-size;
+    }
+}
+
+@mixin media2x() {
+    @media
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+        @content;
+    }
+}
+
+@mixin focus-outline() {
+    outline: 2px dashed currentColor;
+    outline-offset: 2px;
+}

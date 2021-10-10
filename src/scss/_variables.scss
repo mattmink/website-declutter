@@ -1,0 +1,56 @@
+/* Colors
+   ========================================================================== */
+$text-color: #3c3c3c;
+$brand-1: #4692c1;
+$brand-1: rgb(70, 146, 193);
+$link-color: $brand-1;
+$link-color-hover: lighten($brand-1, 10);
+$success: #27be61;
+$danger: #d43333;
+$warning: #e9a920;
+
+$gray-100: #e5ebf1;
+$gray-200: #cad1d4;
+$gray-300: #acb3b6;
+$gray-400: #959b9e;
+$gray-500: #4f5153;
+$gray-600: #1f1f20;
+
+$font-family-headings: 'Montserrat', sans-serif;
+$font-family-body: 'Open Sans', 'Gill Sans MT', 'Gill Sans', Corbel, Arial, sans-serif;
+
+$shadow: 0 2px 3px rgba(0 0 0 / .25);
+$active-control-shadow:  0 0 0 5px rgb(70 146 193 / 40%);
+
+$button-padding: 0.5em 1em;
+
+$breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+$spacers: (
+    auto: auto,
+    0: 0,
+    1: (1rem * 0.25),
+    2: (1rem * 0.5),
+    3: 1rem,
+    4: (1rem * 1.5),
+    5: (1rem * 3)
+);
+
+$directions: (
+    t: (top),
+    b: (bottom),
+    l: (left),
+    r: (right),
+    x: (left, right),
+    y: (top, bottom),
+);
+
+$displays: none, inline, inline-block, block, flex;
+
