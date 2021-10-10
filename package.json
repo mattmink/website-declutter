@@ -2,9 +2,9 @@
     "name": "website-declutter",
     "version": "0.0.0",
     "scripts": {
-        "dev": "vite src",
-        "build": "vite build src",
-        "serve": "vite preview src"
+        "dev": "vite",
+        "build": "vite build",
+        "serve": "vite preview"
     },
     "devDependencies": {
         "sass": "^1.42.1",
