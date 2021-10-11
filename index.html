@@ -13,7 +13,7 @@
 <body>
     <nav class="nav">
         <div class="nav-item"><a class="nav-link" href="#about">Learn more</a></div>
-        <div class="nav-item"><a class="nav-link" href="#contact">Contact Danielle</a></div>
+        <div class="nav-item"><a class="nav-link" href="#contact">Contact me</a></div>
     </nav>
 
     <section class="hero" id="top">
@@ -21,7 +21,7 @@
             <h1 aria-label="Free yourself from clutter">Free yourself <span>from clutter</span></h1>
             <div>
                 <p class="lead">Make room in your life for what matters. <br>Let go of the things that don’t.</p>
-                <a href="#contact" class="btn">Hire Danielle</a>
+                <a href="#contact" class="btn">Get started</a>
             </div>
         </div>
     </section>
@@ -47,6 +47,15 @@
         <div class="container">
             <h2>Ready to get started?</h2>
             <div class="contact-grid">
+                <div>
+                    <h3>Call or text me</h3>
+                    <p>Just prove you're not a robot, and I'll give you my phone number. Then, you can call or text me directly.</p>
+                    <p id="phone" class="phone-number obfuscate">
+                        (<span class="phone-area"></span>) <span class="phone-exchange"></span>&ndash;<span class="phone-line"></span>
+                    </p>
+                    <div id="phoneCaptcha"></div>
+                </div>
+
                 <form id="contactForm" name="contact" action="POST" data-netlify="true">
                     <h3>Send me a message</h3>
                     <div class="form-group">
@@ -66,15 +75,6 @@
                         <button class="btn" type="submit">Send</button>
                     </div>
                 </form>
-
-                <div>
-                    <h3>Call or text me</h3>
-                    <p>Just prove you're not a robot, and I'll give you my phone number. Then, you can call or text me directly.</p>
-                    <p id="phone" class="phone-number obfuscate">
-                        (<span class="phone-area"></span>) <span class="phone-exchange"></span>&ndash;<span class="phone-line"></span>
-                    </p>
-                    <div id="phoneCaptcha"></div>
-                </div>
             </div>
         </div>
     </section>

@@ -24,4 +24,29 @@
         max-width: 100%;
         display: block;
     }
+
+    @include media-breakpoint-down(lg) {
+        .about-grid {
+            align-items: center;
+
+            > :first-child {
+                padding: 1.5rem;
+
+                h2 {
+                    margin-top: 0;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+        .about-grid > :last-child{
+            flex-basis: 45%;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .about-grid {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+    }
 }

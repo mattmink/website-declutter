@@ -24,4 +24,39 @@
         line-height: 1.2;
         margin-bottom: 2rem;
     }
+
+    @include media-breakpoint-down(xl) {
+        h1 {
+            font-size: 10vw;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        h1 {
+            // font-size: 14vw;
+        }
+        .lead {
+            line-height: 1.4;
+            font-size: 0.8rem;
+
+            br {
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: map-get($breakpoints, md) - 1) and (max-height: map-get($breakpoints, sm) - 1) {
+        h1 {
+            margin-bottom: 0.2em;
+            margin-top: 1em;
+        }
+        .lead {
+            br {
+                display: block;
+            }
+        }
+    }
 }

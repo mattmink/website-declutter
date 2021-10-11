@@ -1,10 +1,17 @@
 body {
     background-image: url(/images/bg.jpg);
-    background-size: cover;
+    background-size: contain;
     background-position: right bottom;
     background-repeat: no-repeat;
     background-color: #fff;
     background-attachment: fixed;
+
+    @include media-breakpoint-down(md) {
+        background-size: 120%;
+    }
+    @media (max-width: map-get($breakpoints, md) - 1) and (max-height: map-get($breakpoints, sm) - 1) {
+        background-size: 70%;
+    }
 
     @include media2x {
         background-image: url(/images/bg@2x.jpg);
@@ -16,6 +23,11 @@ body {
     max-width: 1240px;
     padding: 0 2rem;
     margin: 0 auto;
+
+
+    @include media-breakpoint-down(md) {
+        padding: 0 1rem;
+    }
 }
 
 .nav {
