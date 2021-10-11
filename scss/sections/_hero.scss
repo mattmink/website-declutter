@@ -31,13 +31,14 @@
         }
     }
 
+    @include media-breakpoint-down(lg) {
+        padding-top: 6vh;
+    }
+
     @include media-breakpoint-down(md) {
         padding-left: 1rem;
         padding-right: 1rem;
 
-        h1 {
-            // font-size: 14vw;
-        }
         .lead {
             line-height: 1.4;
             font-size: 0.8rem;
@@ -48,12 +49,29 @@
         }
     }
 
-    @media (max-width: map-get($breakpoints, md) - 1) and (max-height: map-get($breakpoints, sm) - 1) {
+
+    @include media-tall-narrow() {
+        min-height: 0;
+        padding-top: 10vh;
+        padding-bottom: 20vh;
+        @include background-image(scroll);
+
         h1 {
-            margin-bottom: 0.2em;
-            margin-top: 1em;
+            margin-bottom: 1.5em;
         }
+    }
+
+    @include media-tall-narrow(landscape) {
+        h1 {
+            margin-bottom: 0.5em;
+            margin-top: 1em;
+            font-size: 7vw;
+        }
+
         .lead {
+            margin-bottom: 1em;
+            font-size: 0.9rem;
+
             br {
                 display: block;
             }
