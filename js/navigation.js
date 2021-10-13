@@ -1,5 +1,7 @@
 import { $, $$, getScrollbarWidth } from './utils';
+import smoothscroll from 'smoothscroll-polyfill';
 
+smoothscroll.polyfill();
 
 /**
  * MOBILE MENU TOGGLE
@@ -54,7 +56,7 @@ const handleLinkClick = (e) => {
     if (!el) return;
 
     closeNavMenu();
-    el.scrollIntoView({ behavior: 'smooth' });
+    window.scrollTo({ top: el.offsetTop, behavior: 'smooth' });
 }
 
 $$('a').forEach((link) => {
