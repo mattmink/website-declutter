@@ -5,6 +5,37 @@
     justify-content: flex-start;
     min-height: 100vh;
     padding-bottom: 14vh;
+    background-image: url(/images/bg.jpg);
+    background-size: 120%;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-attachment: fixed;
+
+    @supports (-webkit-touch-callout: inherit) {
+        background-attachment: scroll;
+    }
+
+    @include media-breakpoint-up(md) {
+        background-size: 80%;
+
+        @include media2x {
+            background-image: url(/images/bg@2x.jpg);
+        }
+    }
+
+    @include media-tall-narrow() {
+        background-attachment: scroll;
+    }
+
+    @include media-tall-narrow(landscape) {
+        background-size: 70%;
+        background-attachment: scroll;
+    }
+
+    @include media-breakpoint-up(xl) {
+        background-size: contain;
+    }
 
     h1 {
         font-size: 6vw;
@@ -49,12 +80,10 @@
         }
     }
 
-
     @include media-tall-narrow() {
         min-height: 0;
         padding-top: 10vh;
         padding-bottom: 20vh;
-        @include background-image(scroll);
 
         h1 {
             margin-bottom: 1.5em;
